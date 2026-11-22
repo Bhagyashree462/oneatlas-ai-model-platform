@@ -1,26 +1,255 @@
+
 @import "tailwindcss";
+@import "highlight.js/styles/github-dark.css";
+
+/* =========================================
+   ONEATLAS GLOBAL STYLES
+========================================= */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #080b14;
+  --foreground: #ffffff;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
+  padding: 0;
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080b14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8b5cf6;
+}
+
+/* =========================================
+   TEXT SELECTION
+========================================= */
+
+::selection {
+  background: #7c3aed;
+  color: #ffffff;
+}
+
+/* =========================================
+   MARKDOWN CONTENT
+========================================= */
+
+.markdown-content {
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+  color: #e5e7eb;
+}
+
+.markdown-content h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 20px 0 12px;
+  color: #ffffff;
+}
+
+.markdown-content h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 18px 0 10px;
+  color: #ffffff;
+}
+
+.markdown-content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 16px 0 8px;
+  color: #ffffff;
+}
+
+.markdown-content p {
+  margin: 10px 0;
+}
+
+.markdown-content ul {
+  list-style: disc;
+  padding-left: 24px;
+  margin: 12px 0;
+}
+
+.markdown-content ol {
+  list-style: decimal;
+  padding-left: 24px;
+  margin: 12px 0;
+}
+
+.markdown-content li {
+  margin: 5px 0;
+}
+
+.markdown-content strong {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.markdown-content em {
+  font-style: italic;
+}
+
+.markdown-content a {
+  color: #a78bfa;
+  text-decoration: underline;
+}
+
+.markdown-content a:hover {
+  color: #c4b5fd;
+}
+
+.markdown-content blockquote {
+  border-left: 3px solid #8b5cf6;
+  padding-left: 14px;
+  margin: 14px 0;
+  color: #cbd5e1;
+}
+
+.markdown-content hr {
+  border: 0;
+  border-top: 1px solid #374151;
+  margin: 20px 0;
+}
+
+/* =========================================
+   INLINE CODE
+========================================= */
+
+.markdown-content :not(pre) > code {
+  background: #272b3b;
+  color: #c4b5fd;
+  padding: 3px 6px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  font-family: Consolas, Monaco, monospace;
+}
+
+/* =========================================
+   CODE BLOCKS
+========================================= */
+
+.markdown-content pre {
+  overflow-x: auto;
+  max-width: 100%;
+  font-family: Consolas, Monaco, monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  tab-size: 2;
+}
+
+.markdown-content pre code {
+  display: block;
+  min-width: fit-content;
+}
+
+/* =========================================
+   TABLES
+========================================= */
+
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  display: block;
+  overflow-x: auto;
+}
+
+.markdown-content th,
+.markdown-content td {
+  border: 1px solid #374151;
+  padding: 9px 12px;
+  text-align: left;
+}
+
+.markdown-content th {
+  background: #272b3b;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.markdown-content tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* =========================================
+   IMAGES
+========================================= */
+
+.markdown-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* =========================================
+   CHECKBOXES
+========================================= */
+
+.markdown-content input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: #8b5cf6;
+}
+
+/* =========================================
+   BUTTON TRANSITIONS
+========================================= */
+
+button {
+  transition: all 0.2s ease;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 640px) {
+  .markdown-content h1 {
+    font-size: 1.35rem;
+  }
+
+  .markdown-content h2 {
+    font-size: 1.15rem;
+  }
+
+  .markdown-content pre {
+    font-size: 12px;
+  }
+
+  .markdown-content th,
+  .markdown-content td {
+    padding: 7px;
+  }
 }
