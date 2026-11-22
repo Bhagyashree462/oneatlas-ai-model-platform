@@ -1,36 +1,174 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# OneAtlas – AI Model Platform
 
-## Getting Started
+OneAtlas is an AI-powered conversational platform built using Next.js and Google Gemini. It provides an interactive AI Playground where users can ask questions, receive AI-generated responses, and manage conversations.
 
-First, run the development server:
+## 🚀 Live Demo
+
+**Live Website:** https://oneatlas-ai-model-platform-2oj2-aim88fa2q-bhagyashree6.vercel.app/
+
+**GitHub Repository:** https://github.com/Bhagyashree462/oneatlas-ai-model-platform
+
+## ✨ Features
+
+- User registration and login using Supabase Authentication.
+- AI-powered conversations using Google Gemini.
+- Interactive AI Playground.
+- Streaming AI responses.
+- Conversation history stored in browser local storage.
+- Create multiple conversations.
+- Rename and delete conversations.
+- Copy AI-generated responses.
+- Regenerate AI responses.
+- Stop response generation.
+- Markdown rendering.
+- Code syntax highlighting.
+- Responsive user interface.
+
+## 🛠️ Technologies Used
+
+**Frontend**
+- Next.js
+- React.js
+- TypeScript
+- Tailwind CSS
+
+**AI Integration**
+- Google Gemini API
+- AI SDK
+
+**Authentication**
+- Supabase
+- Supabase SSR
+
+**Libraries**
+- React Markdown
+- Remark GFM
+- Rehype Highlight
+
+**Tools**
+- Node.js
+- npm
+- Git and GitHub
+- Vercel
+- Visual Studio Code
+
+## 📂 Project Structure
+
+```text
+oneatlas-platform/
+├── app/
+│   ├── api/
+│   │   └── chat/
+│   │       └── route.ts
+│   ├── auth/
+│   │   └── callback/
+│   │       └── route.ts
+│   ├── login/
+│   │   └── page.tsx
+│   ├── signup/
+│   │   └── page.tsx
+│   ├── playground/
+│   │   └── page.tsx
+│   ├── globals.css
+│   └── page.tsx
+├── lib/
+│   └── supabase/
+│       ├── client.ts
+│       └── server.ts
+├── proxy.ts
+├── public/
+├── package.json
+├── .gitignore
+└── README.md
+```
+
+## ⚙️ Installation and Setup
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Bhagyashree462/oneatlas-ai-model-platform.git
+```
+
+### 2. Open the project folder
+
+```bash
+cd oneatlas-ai-model-platform
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Configure environment variables
+
+Create a `.env.local` file in the root directory.
+
+Add:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your_supabase_publishable_key
+GEMINI_API_KEY=your_gemini_api_key
+```
+
+Replace the example values with your actual credentials.
+
+**Important:** Never upload API keys or `.env.local` to GitHub.
+
+### 5. Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔐 Authentication
 
-## Learn More
+OneAtlas uses Supabase Authentication.
 
-To learn more about Next.js, take a look at the following resources:
+- Users can create an account.
+- Existing users can log in.
+- Protected Playground routes require authentication.
+- User sessions are managed through Supabase.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🤖 AI Playground
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The AI Playground integrates Google Gemini to generate responses.
 
-## Deploy on Vercel
+Users can:
+- Ask questions.
+- Receive streaming AI responses.
+- Copy responses.
+- Regenerate answers.
+- Stop response generation.
+- Manage conversation history.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🌐 Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The application is deployed using Vercel.
+
+**Live Application:**
+
+https://oneatlas-ai-model-platform-2oj2-aim88fa2q-bhagyashree6.vercel.app/
+
+## 👩‍💻 Developer
+
+**Bhagyashree Kalavant**
+
+B.Tech Computer Science and Engineering Student
+
+GitHub: https://github.com/Bhagyashree462
+
+LinkedIn: https://www.linkedin.com/in/bhagyashree-kalavant-02659a349/
+
+## 📄 License
+
+This project was developed as an internship project for educational and learning purposes.
